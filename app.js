@@ -1,10 +1,9 @@
 var express= require('express');
 var app=express();
-var port = 3000;
+var port = process.env.PORT || 3000;
 var routes = require('./routes');
 var MongoClient=require('mongodb').MongoClient;
 var db;
-var pass=require('pwd');
 var dbUrl="mongodb://admin:habreg@kahana.mongohq.com:10060/habreg";
 var bodyParser = require('body-parser');
 MongoClient.connect(dbUrl,function(err,database){
