@@ -1,0 +1,41 @@
+doctype html
+html
+	head
+		title #{title}
+		link(rel='stylesheet',type='text/css',href='css/style.css')
+		link(rel='stylesheet',type='text/css',href='css/bootstrap.min.css')
+		script(type="text/javascript",src="js/jquery-2.0.3.min.js")
+		script(type="text/javascript",src="js/script.js")
+		script(type="text/javascript",src="js/bootstrap.min.js")
+		script(type="text/javascript",src="js/ajax.js")
+	body
+		nav(class="navbar navbar-default")
+			div(class="container-fluid")
+				div(class="navbar-header")
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+				div(class="navbar-collapse collapse in")
+					ul(class="nav navbar-nav")
+						li
+							a(href="/") Home
+						li
+							a(href="/make") Create
+						li
+							a(href="#") MyHabits
+						li
+							a(href="#") Statistics
+						li
+							a(href="#") Motivation
+					ul(class="nav navbar-nav navbar-right")
+						li
+							img(src="img/load2.gif",id="load")
+						li
+							a(href="/login") Login
+						li
+							a(href="/register") Register
+
+		div(id='container')
+			block content

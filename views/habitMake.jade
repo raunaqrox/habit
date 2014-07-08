@@ -1,0 +1,23 @@
+extends index
+block content
+	h2(class="title") Habits
+	div(id="habcont")
+		input(id="habitMake",class="form-control",placeholder="Name of Habit")
+		h3(id="head") Start
+		select(id="start")
+			option Today
+			option Tomorrow
+		div(id="till")
+			label(class="rad") Days
+			input(type="radio",name="till",value="days",class="rad2")
+			label(class="rad") Months
+			input(type="radio",name="till",value="months",class="rad2")
+			h5(id="for")
+			input(class="form-control",id="dm")
+		img(src="img/plus.png",id="plus",title="Create Habit")
+		div(id="right_container")
+				h3(id="habit")
+				br
+				h4(id="since")
+				br
+				h4(id="till2")
