@@ -1,4 +1,5 @@
 var db;
+var pass=require('pwd');
 exports.getDb=function(database){
 	db=database;
 }
@@ -13,6 +14,11 @@ exports.login = function(req,res){
 }
 exports.register=function(req,res){
 	res.render('register');
+}
+exports.plogin=function(req,res){
+	var username = req.body.username;
+	var password = req.body.password;
+	res.send('You sent '+username+' '+password);
 }
 exports.pmake=function(req,res){
 	var title=req.body.title;

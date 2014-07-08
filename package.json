@@ -11,7 +11,8 @@
     "body-parser": "^1.4.3",
     "express": "latest",
     "jade": "latest",
-    "mongodb": "^1.4.7"
+    "mongodb": "^1.4.7",
+    "pwd": "0.0.4"
   },
   "author": "saheb",
   "license": "ISC"
