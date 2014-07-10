@@ -95,3 +95,42 @@ nav a{
 	height: 100px;
 	cursor: pointer;
 }
+#plus_register{
+	position: absolute;
+	left: 48%;
+	margin-top: 10px;
+	background-color: #374140!important;
+	color: #D9CB9E;
+	cursor: pointer;
+	border: 1px dashed #D9CB9E;
+}
+#available{
+	color: #D9CB9E;
+	font-size: 8;
+}
+#check{
+	background-color: #374140;
+	padding: 10px;
+	border-radius: 20px;
+	border: 2px dotted #D9CB9E;
+	color: #D9CB9E;
+	text-align: center;
+	position: absolute;
+	left: 70%;
+	cursor: pointer;
+}
+#error_reg{
+	color: #D9CB9E;
+}
+#suggest{
+	display: none;
+	width: 150px;
+	padding: 10px;
+	position: absolute;
+	top: 45%;
+	text-align: center;
+	border: 3px dotted #D9CB9E;
+	border-radius: 20px;
+	color: #D9CB9E;
+	background-color: #374140;
+}

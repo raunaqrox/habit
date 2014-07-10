@@ -1,7 +1,15 @@
 extends index
 block content
-	h2(class="title") Register	
-	input(class="form-control log",placeholder="username" id="username" required)
-	input(class="form-control log",placeholder="password",type="password",id="password" required)
-	input(class="form-control log",placeholder="confirm-password",type="password",id="con_password" required)
-	img(src="img/plus.png",id="plus_login")
+	h2(class="title") Registration
+	form(id="registration",action="/register",method="POST")
+		#check
+			p Check availability
+			span(id="available")
+		input(class="form-control log",placeholder="username",name="username",id="username_reg" required)
+		input(class="form-control log",placeholder="Email",id="email",name="email",type="email" required)
+		input(class="form-control log",placeholder="password",type="password",name="password",id="password_reg" required)
+		input(class="form-control log",placeholder="confirm-password",type="password",id="con_password" required)
+		button(class="btn btn-danger",id="plus_register",type="submit") Register
+	#suggest
+		h5 Password should be atleast 8 characters long
+	h4#error_reg
