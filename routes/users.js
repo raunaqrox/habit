@@ -9,7 +9,7 @@ exports.login = function(req,res){
 exports.register=function(req,res){
 	res.render('register',{title:"Register"});
 }
-exports.pregister=function(req,res){
+exports.pregister = function(req,res){
 	var username = req.body.username;
 	var password = req.body.password;
 	var email = req.body.email;
@@ -20,15 +20,16 @@ exports.pregister=function(req,res){
 		user.join=new Date();
 		user.salt=salt;
 		user.hash=hash;
-	});
-	db.collection('users').insert(user,function(err,result){
+		db.collection('users').insert(user,function(err,result){
 		if(!err){
-			res.send(result);
+			res.redirect('/profile');
 		}
 	});
+});
+	
 
 }
-exports.useravail=function(req,res){
+exports.useravail = function(req,res){
 	var username=req.query.username;
 	if(username.length!=0){
 		db.collection('users').find({username:username}).toArray(function(err,documents){
@@ -45,8 +46,26 @@ exports.useravail=function(req,res){
 }
 	
 }
-exports.plogin=function(req,res){
+exports.plogin = function(req,res){
 	var username = req.body.username;
 	var password = req.body.password;
-	res.send('You sent '+username+' '+password);
+	db.collection('users').findOne({username:username},function(err,user){
+		if(!err){
+			if(user!=null){
+				pass.hash(password,user.salt,function(err,hash){
+					if(user.hash == hash){
+						req.session.username=username;
+						req.session.password=password;
+						res.send('yes');
+					}else{
+						res.send('no');
+					}
+				});
+			}
+		}
+	});
+}
+exports.logout = function(req,res){
+	req.session.username = null;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    res.redirect('/');
 }

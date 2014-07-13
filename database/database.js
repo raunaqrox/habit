@@ -1,6 +1,8 @@
 var db;
 var routes = require('../routes');
-var users = require('../routes/users.js');
+var users = require('../routes/users');
+var profile = require('../routes/profile');
+var habitMaker = require('../routes/habitMaker');
 var MongoClient = require('mongodb').MongoClient;
 var dbUrl = "mongodb://admin:habreg@kahana.mongohq.com:10060/habreg";
 module.exports=MongoClient.connect(dbUrl,function(err,database){
@@ -9,5 +11,7 @@ module.exports=MongoClient.connect(dbUrl,function(err,database){
 		db = database;
 		routes.getDb(db);
 		users.getDb(db);
+		profile.getDb(db);
+		habitMaker.getDb(db);
 	}
 });

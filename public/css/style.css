@@ -17,6 +17,7 @@ body{
 	background-color: #DC3522;
 	color: #260801;
 	border: 3px dashed #D9CB9E;
+	box-shadow: 4px 4px 3px black;
 }
 .title{
 	text-align: center;

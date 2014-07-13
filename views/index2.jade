@@ -3,6 +3,7 @@ html
 	head
 		title #{title}
 		link(rel='stylesheet',type='text/css',href='css/style.css')
+		link(rel='stylesheet',type="text/css",href="css/profile.css")
 		link(rel='stylesheet',type='text/css',href='css/bootstrap.min.css')
 		script(type="text/javascript",src="js/jquery-2.0.3.min.js")
 		script(type="text/javascript",src="js/script.js")
@@ -21,13 +22,19 @@ html
 					ul(class="nav navbar-nav")
 						li
 							a(href="/") Home
+						li
+							a(href="/make") Create
+						li
+							a(href="#") MyHabits
+						li
+							a(href="#") Statistics
+						li
+							a(href="#") Motivation
 					ul(class="nav navbar-nav navbar-right")
 						li
 							img(src="img/load2.gif",id="load")
 						li
-							a(href="/login") Login
-						li
-							a(href="/register") Register
+							a(href="/logout") Logout
 
 		div(id='container')
 			block content

@@ -5,7 +5,8 @@ var users = require('./routes/users');
 var routes = require('./routes');
 var session = require('express-session');
 var bodyParser = require('body-parser');
-
+var profile = require('./routes/profile');
+var habitMaker = require('./routes/habitMaker')
 
 /*=========================
 Database.js
@@ -28,7 +29,7 @@ app.use(bodyParser.urlencoded());
 
 
 var isLoggedIn = function(req, res, next) {
-  if (req.session && req.session.user)
+  if (req.session && req.session.username)
     next();
   else
     res.redirect('/login');
@@ -40,8 +41,14 @@ Index.js
 
 
 app.get('/',routes.index);
-app.get('/make',isLoggedIn,routes.make);
-app.post('/make',isLoggedIn,routes.pmake);
+
+
+/*=========================
+HabitMaker.js
+=========================*/
+
+app.get('/make',isLoggedIn,habitMaker.make);
+app.post('/make',isLoggedIn,habitMaker.pmake);
 
 /*=========================
 Users.js
@@ -52,6 +59,14 @@ app.get('/useravail',users.useravail);
 app.post('/login',users.plogin);
 app.get('/register',users.register);
 app.post('/register',users.pregister);
+app.get('/logout',users.logout);
+
+/*=========================
+Users.js
+=========================*/
+
+app.get('/profile',profile.profile);
+
 
 app.listen(port,function(){
 	console.log('Listening on port 3000');

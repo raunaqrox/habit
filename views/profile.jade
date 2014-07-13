@@ -1,0 +1,15 @@
+extends index2
+block content
+	div(id="personal_info")
+		h3 Username : #{user.username}
+		h3 Email	: #{user.email}
+		h3 Joint 	: #{date}
+	div(id="my_motivation")
+		h2 My Habits
+		if(habits==0)
+			p #{habits} habits
+		else
+			each habit in habits
+				p habit
+		
+		

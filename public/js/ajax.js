@@ -20,7 +20,11 @@ $('#plus_login').click(function(){
 	var password = $('#password').val();
 	var login={username:username,password:password};
 	$.post('/login',login,function(data){
-		alert(data);
+		if(data==='yes'){
+			window.location.href = "/profile";
+		}else{
+			window.location.href = "/login"
+		}
 	});
 
 });
