@@ -135,3 +135,25 @@ nav a{
 	color: #D9CB9E;
 	background-color: #374140;
 }
+#myHabits a{
+	color: #D9CB9E;
+}
+#myHabits a:link{
+	text-decoration: none;
+
+}
+#myHabits{
+	text-align: center;
+}
+#myHabits ul{
+	list-style: none;
+}
+#myHabits a:visited{
+	text-decoration: none;
+}
+#myHabits a:hover{
+	text-decoration: none;
+}
+#myHabits h1{
+	color: #2A2C2B;
+}

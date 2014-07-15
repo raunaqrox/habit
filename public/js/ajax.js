@@ -54,7 +54,7 @@ if(top.location.pathname==='/register'){
 			$('#error_reg').text('Passwords do not match!').fadeIn(1000).fadeOut(3000);
 			e.preventDefault();
 		}else{
-			if(pass.length<=8){
+			if(pass.length<8){
 				$('#error_reg').text('Password should be atleat 8 characters long!').fadeIn(1000).fadeOut(3000);
 				e.preventDefault();
 			}

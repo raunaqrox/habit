@@ -1,13 +1,14 @@
-var express= require('express');
-var app=express();
+var express = require('express');
+var app = express();
 var port = process.env.PORT || 3000;
 var users = require('./routes/users');
 var routes = require('./routes');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var profile = require('./routes/profile');
-var habitMaker = require('./routes/habitMaker')
-
+var habitMaker = require('./routes/habitMaker');
+var myHabits = require('./routes/myHabits');
+var bson = require('mongodb').BSONPure;
 /*=========================
 Database.js
 =========================*/
@@ -39,9 +40,7 @@ var isLoggedIn = function(req, res, next) {
 Index.js
 =========================*/
 
-
 app.get('/',routes.index);
-
 
 /*=========================
 HabitMaker.js
@@ -62,11 +61,17 @@ app.post('/register',users.pregister);
 app.get('/logout',users.logout);
 
 /*=========================
-Users.js
+Profile.js
 =========================*/
 
-app.get('/profile',profile.profile);
+app.get('/profile',isLoggedIn,profile.profile);
 
+/*=========================
+myHabits.js
+=========================*/
+myHabits.getBson(bson);
+app.get('/myhabits',isLoggedIn,myHabits.myHabits);
+app.get('/myhabits/:id',myHabits.thisHabit);
 
 app.listen(port,function(){
 	console.log('Listening on port 3000');

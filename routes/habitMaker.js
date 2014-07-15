@@ -9,7 +9,9 @@ exports.pmake = function(req,res){
 	var title=req.body.title;
 	var till = req.body.till;
 	var from = req.body.from;
+	var user = req.session.username;
 	var habit = {
+		username:user,
 		title:title,
 		till:till,
 		from:from

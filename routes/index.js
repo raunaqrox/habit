@@ -1,6 +1,6 @@
 var db;
 exports.getDb=function(database){
-	db=database;
+	db = database;
 }
 exports.index=function(req,res){
 	if(req.session.username==null)

@@ -22,7 +22,7 @@ exports.pregister = function(req,res){
 		user.hash=hash;
 		db.collection('users').insert(user,function(err,result){
 		if(!err){
-			res.redirect('/profile');
+			res.redirect('/login');
 		}
 	});
 });
