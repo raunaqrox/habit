@@ -14,11 +14,15 @@ exports.pmake = function(req,res){
 		username:user,
 		title:title,
 		till:till,
-		from:from
+		from:from,
+		count:0
 	}
 	db.collection('habit').insert(habit,function(err,result){
 		if(!err){
-			res.end();	
+			res.end('yes');	
+		}
+		else{
+			res.end('no');
 		}
 	});
 }

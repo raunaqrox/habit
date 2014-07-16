@@ -19,6 +19,20 @@ body{
 	border: 3px dashed #D9CB9E;
 	box-shadow: 4px 4px 3px black;
 }
+.inheritContainer{
+	position: relative;
+	margin: auto;
+	width: 80%;
+	height:inherit!important;
+	border-radius: 5px;
+	font-size: 20px;
+	margin-top: 100px;
+	padding: 20px;
+	background-color: #DC3522;
+	color: #260801;
+	border: 3px dashed #D9CB9E;
+	box-shadow: 4px 4px 3px black;
+}
 .title{
 	text-align: center;
 	color: #D9CB9E;
@@ -156,4 +170,20 @@ nav a{
 }
 #myHabits h1{
 	color: #2A2C2B;
+}
+nav{
+	box-shadow: 0px 1px 2px black;
+}
+#checkIn{
+	text-align: center;
+}
+#checkIn ul{
+	list-style: none;
+}
+#checkIn ul li{
+	color: #D9CB9E;
+	cursor: pointer;
+}
+.sm_marg{
+	margin-left: 10px;
 }

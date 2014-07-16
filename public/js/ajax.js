@@ -28,7 +28,9 @@ $('#plus_login').click(function(){
 	});
 
 });
-
+if(top.location.pathname === '/myhabits' || top.location.pathname === '/checkin'){
+	$('#container').addClass('inheritContainer');
+}
 /*==========================
 
 Register
@@ -83,8 +85,12 @@ if(top.location.pathname==='/make'){
 	  		if(from===''||till===''||title===''){
 	  			alert('All fields are not filled correctly');
 	  		}else{
-	  			$.post('/make',data,function(data){
-	  				alert(data);
+	  			$.post('/make',data,function(data){	 
+	  				if(data==='yes'){
+	  					window.location.href = "/myhabits";
+	  				}else{
+	  					window.location.href = "/make"
+	  				} 				
 	  			});
 	  		}
 	  });

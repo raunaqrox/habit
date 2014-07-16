@@ -9,6 +9,7 @@ var profile = require('./routes/profile');
 var habitMaker = require('./routes/habitMaker');
 var myHabits = require('./routes/myHabits');
 var bson = require('mongodb').BSONPure;
+var checkIn = require('./routes/checkIn');
 /*=========================
 Database.js
 =========================*/
@@ -71,7 +72,17 @@ myHabits.js
 =========================*/
 myHabits.getBson(bson);
 app.get('/myhabits',isLoggedIn,myHabits.myHabits);
-app.get('/myhabits/:id',myHabits.thisHabit);
+app.get('/myhabits/:id',isLoggedIn,myHabits.thisHabit);
+app.get('/myhabits/rem/:id',isLoggedIn,myHabits.remThisHabit);
+
+
+/*=========================
+CheckIn.js
+=========================*/
+checkIn.getBson(bson);
+app.get('/checkin',isLoggedIn,checkIn.checkIn);
+app.post('/upDate',isLoggedIn,checkIn.upDate);
+
 
 app.listen(port,function(){
 	console.log('Listening on port 3000');

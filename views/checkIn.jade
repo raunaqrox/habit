@@ -1,0 +1,9 @@
+extends index2
+block content
+	script(type="text/javascript",src="/js/checkIn.js")
+	#checkIn
+		h1 Click to show - Done for today!
+		ul
+			each habit in habits
+					li(data-id=habit._id)
+						h3 #{habit.title}
